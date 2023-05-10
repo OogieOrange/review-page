@@ -1,0 +1,109 @@
+/*------------------------------------- Body */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-transform: uppercase;
+    font-family: 'PT Serif', serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    background-color: #0077b6;
+    color: white;
+}
+
+/*------------------------------------- Colors */
+
+.blue-bg {
+    background-color: #138086;
+}
+
+.light-blue-bg {
+    background-color: #78C0A8;
+}
+
+.darker-bg {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------------------- Paddings/Margins/Text */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.padd-10 {
+    padding: 10px;
+}
+
+.padd-10-tb {
+    padding: 10px 0;
+}
+
+.no-p {
+    padding: 0;
+}
+
+.no-m {
+    margin: 0;
+}
+
+/*------------------------------------- Header */
+
+nav li {
+    font-weight: 500;
+}
+
+.navbar-nav a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    font-size: 150%;
+    font-weight: 500;
+    font-family: 'PT Serif', serif;
+}
+
+
+/*------------------------------------- Footer */
+
+footer div {
+    padding: 10px;
+}
+
+footer h5 {
+    color: #90e0ef;
+}
+
+.txt-white {
+    color: white;
+}
+
+/*------------------------------------- register.html */
+
+.register-box {
+    margin: 3rem 0;
+}
+
+form input {
+    width: 80%;
+    height: 32px;
+}

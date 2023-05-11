@@ -24,15 +24,15 @@ p {
 /*------------------------------------- Colors */
 
 .blue-bg {
-    background-color: #138086;
+    background-color: #165b5f;
 }
 
 .light-blue-bg {
     background-color: #78C0A8;
 }
 
-.darker-bg {
-    background-color: rgba(0, 0, 0, 0.2);
+.light-gray-bg {
+    background-color: #dbdbdb;
 }
 
 .txt-white {
@@ -72,13 +72,29 @@ footer h5 {
     color: #90e0ef;
 }
 
-/*------------------------------------- register.html */
+/*------------------------------------- index.html */
 
-.register-box {
-    margin: 3rem 0;
+.link {
+    text-decoration: none;
+    color: black;
 }
 
-form input {
-    width: 80%;
-    height: 32px;
+.card {
+    border: none;
+}
+
+.card-body {
+    border-radius: 2px;
+}
+
+.image-box {
+    position: relative;
+}
+
+.border {
+    border: 2px solid #dbdbdb;
+}
+
+.card-img-top {
+    border-radius: 0;
 }

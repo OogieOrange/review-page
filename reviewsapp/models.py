@@ -22,7 +22,7 @@ class Product(models.Model):
         User, related_name='reviewsapp_downvotes', blank=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['created_on']
 
     def __str__(self):
         return self.title
@@ -43,7 +43,7 @@ class Comment(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['created_on']
 
     def __str__(self):
         return f"Comment {self.body} created by {self.name}"

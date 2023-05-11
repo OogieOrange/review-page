@@ -3,18 +3,34 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mx-4">
         <div class="col-12">
-            <div class="row">
+            <div class="row mt-4">
 
                 {% for product in product_posts %}
-                <div class="col-md-3">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3>{{ product.title }}</h3>
-                            <p>{{ product.description }}</p>
-                            <p>Price: {{ product.price }}</p>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card mb-3">
+                        <a href="#" class="link"></a>
+                        <div class="card-body m-2 mb-2">
+                            <div class="border">
+                                <div class="image-box">
+                                    {% if "placeholder" in product.image.url %}
+                                    <img class="card-img-top"
+                                        src="https://cdn.vanderbilt.edu/vu-wp0/wp-content/uploads/sites/288/2019/03/28062612/Image-Coming-Soon-Placeholder.png"
+                                        alt="No current image">
+                                    {% else %}
+                                    <img class="card-img-top" src="{{ product.image.url }}"
+                                        alt="Photo of {{ product.title }}">
+                                    {% endif %}
+                                </div>
+                                <div class="light-gray-bg p-2">
+                                    <h4>{{ product.title }}</h4>
+                                    <p>Price: {{ product.price }}</p>
+                                    <p>{{ product.created_on }}</p>
+                                </div>
+                            </div>
                         </div>
+                        </a>
                     </div>
                 </div>
 
@@ -27,6 +43,19 @@
             </div>
         </div>
     </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
 
 {% endblock %}

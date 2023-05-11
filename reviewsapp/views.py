@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Product
 
 
@@ -9,3 +9,4 @@ class ProductPosts(generic.ListView):
     template_name = 'index.html'
     context_object_name = 'product_posts'
     paginate_by = 12
+

@@ -2,6 +2,31 @@
 
 {% block content %}
 
-<p>hello</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+
+                {% for product in product_posts %}
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.description }}</p>
+                            <p>Price: {{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

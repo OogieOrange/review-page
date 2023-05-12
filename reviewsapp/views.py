@@ -9,4 +9,3 @@ class ProductPosts(generic.ListView):
     template_name = 'index.html'
     context_object_name = 'product_posts'
     paginate_by = 12
-

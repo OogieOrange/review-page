@@ -2,6 +2,29 @@
 
 {% block content %}
 
+<div class="container-fluid">
+    <div class="row mx-4">
+        <div class="col-9">
+            <div class="row my-4">
+                <div class="col-6">
+                    <h2>{{ product.title }}</h2>
+                    <p>{{ product.created_on }}</p>
+                </div>
+                <div class="col-6">
+                    {% if "placeholder" in product.image.url %}
+                    <img class="card-img-top"
+                        src="https://images.pexels.com/photos/8833426/pexels-photo-8833426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="No current image">
+                    {% else %}
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="Photo of {{ product.title }}">
+                    {% endif %}
+                </div>
+            </div>
+            
+            <p>{{ product.description }}</p>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

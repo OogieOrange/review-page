@@ -10,26 +10,26 @@
                 {% for product in product_posts %}
                 <div class="col-md-6 col-xl-3">
                     <div class="card mb-3">
-                        <a href="#" class="link"></a>
-                        <div class="card-body m-2 mb-2">
-                            <div class="border">
-                                <div class="image-box">
-                                    {% if "placeholder" in product.image.url %}
-                                    <img class="card-img-top"
-                                        src="https://images.pexels.com/photos/8833426/pexels-photo-8833426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                        alt="No current image">
-                                    {% else %}
-                                    <img class="card-img-top" src="{{ product.image.url }}"
-                                        alt="Photo of {{ product.title }}">
-                                    {% endif %}
-                                </div>
-                                <div class="light-gray-bg p-2">
-                                    <h4>{{ product.title }}</h4>
-                                    <p>Price: {{ product.price }}</p>
-                                    <p>{{ product.created_on }}</p>
+                        <a href="{% url 'product_detail' product.slug %}" class="link">
+                            <div class="card-body m-2 mb-2">
+                                <div class="border">
+                                    <div class="image-box">
+                                        {% if "placeholder" in product.image.url %}
+                                        <img class="card-img-top"
+                                            src="https://images.pexels.com/photos/8833426/pexels-photo-8833426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                            alt="No current image">
+                                        {% else %}
+                                        <img class="card-img-top" src="{{ product.image.url }}"
+                                            alt="Photo of {{ product.title }}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="light-gray-bg p-2">
+                                        <h4>{{ product.title }}</h4>
+                                        <p>Price: {{ product.price }}</p>
+                                        <p>{{ product.created_on }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                 </div>

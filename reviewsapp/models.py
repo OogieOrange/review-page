@@ -11,7 +11,7 @@ class Product(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField(max_length=200)
+    description = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)

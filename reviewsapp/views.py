@@ -19,7 +19,7 @@ class ProductDetails(generic.ListView):
 
         return render(
             request,
-            "review_details.html",
+            "review-details.html",
             {
                 "product": post,
             },

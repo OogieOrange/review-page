@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row my-4 justify-content-center">
+        <div class="col-10 col-md-6 col-lg-4">
+            <div class="row my-4">
+
+                <h1>{% trans "Login" %}</h1>
+
+                <p class="mt-2">{% blocktrans %} Welcome to Phone Review! <br> For you to be able to leave a comment on
+                    the reviews
+                    and share your
+                    opinion of their accuracy you have to be loged in. If you do not already have na account you can
+                    register here,
+                    <a class="link uppercase" href="{{ signup_url }}">Register</a>{% endblocktrans %}
+                </p>
+            </div>
+            <div class="row">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="btn-light-blue mt-4" type="submit">{% trans "Login" %}</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

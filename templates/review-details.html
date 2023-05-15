@@ -14,13 +14,22 @@
     <div class="row mx-4 justify-content-center">
         <div class="col-sm-10 col-md-9 col-xl-8 my-5">
             <div class="row my-4 ">
-                <div class="col-6 text-center center ">
+                <div class="col-12 col-sm-6 text-center center ">
                     <h2>{{ product.title }}</h2>
                     <p>{{ product.price }} $</p>
                     <br>
-                    <p>{{ product.created_on }}</p>
+                    <p class="date">{{ product.created_on }}</p>
                 </div>
-                <div class="col-6">
+                <div class="d-none d-sm-block col-sm-6">
+                    {% if "placeholder" in product.image.url %}
+                    <img class="card-img-top"
+                        src="https://images.pexels.com/photos/8833426/pexels-photo-8833426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="No current image">
+                    {% else %}
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="Photo of {{ product.title }}">
+                    {% endif %}
+                </div>
+                <div class="col-12 d-sm-none d-md-none d-lg-none d-xl-none mt-5">
                     {% if "placeholder" in product.image.url %}
                     <img class="card-img-top"
                         src="https://images.pexels.com/photos/8833426/pexels-photo-8833426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -36,21 +45,11 @@
             </div>
 
             <div class="row my-4">
-                <div class="col-md-8">
-                    <h3>Comments:</h3>
-                    {% for comment in comments %}
-                    <div class="card">
-                        <div class="card-body">
-                            <p>{{ comment.name }} <span>{{ created_on }}</span></p>
-                            <p>{{ comment.body }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="col-md-4">
+                <h3>Comments:</h3>
+                <div class="col-lg-5 mt-4">
                     {% if user.is_authenticated %}
 
-                    <h3>Share your opinion!</h3>
+                    <h5>Share your opinion!</h5>
                     <p></p>
                     <form method="post" style="margin-top: 1.3em;">
                         {{ comment_form | crispy }}
@@ -60,7 +59,19 @@
 
                     {% endif %}
                 </div>
+                <div class="col-lg-7">
+                    {% for comment in comments %}
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p class="comment-name">{{ comment.name }}</p>
+                            <p class="date mb-1">{{ comment.created_on }}</p>
+                            <p>{{ comment.body }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
+
         </div>
     </div>
 </div>

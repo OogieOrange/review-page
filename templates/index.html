@@ -29,10 +29,14 @@
                                             alt="Photo of {{ product.title }}">
                                         {% endif %}
                                     </div>
-                                    <div class="light-gray-bg p-2">
+                                    <div class="light-green-bg p-2">
                                         <h4>{{ product.title }}</h4>
                                         <p>Price: {{ product.price }}</p>
                                         <p>{{ product.created_on }}</p>
+                                        <p class="icon-style">
+                                            <i class="far fa-thumbs-down"></i>{{ product.number_of_downvotes }}
+                                            <i class="far fa-thumbs-up"></i>{{ product.number_of_upvotes }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>

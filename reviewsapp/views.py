@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from .models import Product
+from django.http import HttpResponseRedirect
+from .models import Product, Comment
 from .forms import CommentForm
 
 
@@ -56,3 +57,20 @@ class ProductDetails(generic.ListView):
                 "comment_form": CommentForm()
             },
         )
+
+
+def edit_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST, instance=comment)
+        if comment_form.is_valid():
+            comment_form.save()
+        return render(request, 'comment-edited.html')
+
+    comment_form = CommentForm(instance=comment)
+    context = {
+        'comment_form': comment_form
+    }
+
+    return render(request, 'edit-comment.html', context)

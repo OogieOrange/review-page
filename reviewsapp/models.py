@@ -36,8 +36,6 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
-    id = models.CharField(
-        primary_key=True, default=uuid.uuid4(), max_length=50, editable=False)
     post = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=100)

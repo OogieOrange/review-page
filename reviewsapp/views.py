@@ -74,3 +74,10 @@ def edit_comment(request, comment_id):
     }
 
     return render(request, 'edit-comment.html', context)
+
+
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+
+    return render(request, 'comment-deleted.html')

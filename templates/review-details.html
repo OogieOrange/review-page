@@ -45,9 +45,13 @@
                 </div>
             </div>
 
+            <hr>
+
             <div class="my-5">
                 <p>{{ product.description | safe }}</p>
             </div>
+
+            <hr>
 
             <div class="row my-4">
                 <h3>Comments:</h3>
@@ -70,14 +74,28 @@
                             <p class="comment-name">{{ comment.name }}</p>
                             <p class="date mb-1">{{ comment.created_on }}</p>
                             <p>{{ comment.body }}</p>
-                            <p>{{ comment.id }}</p>
+
 
                             {% if request.user.username == comment.name %}
                             <hr>
-                            <p class="btn-light-blue">
-                                |<a class="link-white" href="/edit/{{ comment.id }}"> EDIT</a> |
-                                <a class="link-white" href="/delete">DELETE </a>|
-                            </p>
+                            <div class="row text-center justify-content-around">
+                                <p>
+                                <div class="col-5 btn-light-blue">
+                                    <a class="link-white" href="/edit/{{ comment.id }}">
+                                        <p>EDIT</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-5 btn-light-blue">
+                                    <a class="link-white" href="/delete/{{ comment.id }}">
+                                        <div>
+                                            <p>DELETE</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                </p>
+                            </div>
                             {% endif %}
                         </div>
                     </div>

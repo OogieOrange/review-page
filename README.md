@@ -189,7 +189,6 @@ The images were obtained from Pexels. The following where used:
 - When adding the function to edit comments the comment model was edited to create a unique id for each one. But this did not work and resulted in an inability to comment (as the id for the comments were the same).
 + This was solved by simply reverting back to the models default id method.
   
-<hr>
 
 | User story testing  | Does the functionality exist?  | If not why? |
 | ------------- | ------------- | ------------- |
@@ -198,10 +197,10 @@ The images were obtained from Pexels. The following where used:
 | As a **Site User / Admin** I can **see comments on a review** so that **I can understand what others think of the product and review**  | Yes  |  |
 | As a **Site User** I can **create an account on the site** so that **I can comment and take part of the community and the rating**  | No  | The rating function is yet to be implemented. Otherwise the user story is complete |
 | As a **Site User** I can **leave, edit and delete comments on reviews** so that **I can provide personal insight on the product for others**  | Yes  |  |
-| As a **Site User** I can **search for products on the site** so that **I can find items fast and easily**  | No  | The functon has yet to be implemented |
-| As a **Site User** I can **take part in voting for the next product to be rated** so that **I can get insight on a product that I'm interested in**  | No  | The functon has yet to be implemented |
-| As a **Site User** I can **view the posted ratings** so that **I can get more information of the review accuracy**  | No  | The functon has yet to be implemented |
-<hr>
+| As a **Site User** I can **search for products on the site** so that **I can find items fast and easily**  | No  | The function has yet to be implemented |
+| As a **Site User** I can **take part in voting for the next product to be rated** so that **I can get insight on a product that I'm interested in**  | No  | The function has yet to be implemented |
+| As a **Site User** I can **view the posted ratings** so that **I can get more information of the review accuracy**  | No  | The function has yet to be implemented |
+
 
 + Testing CRUD functionality:
 
@@ -220,7 +219,7 @@ The images were obtained from Pexels. The following where used:
 
 + Lighthouse
 
-![Accessibility score]()
+![Lighthouse Result](static/readme-images/lighthouse.png)
 
 + Python files passed through [PEP8](https://pep8ci.herokuapp.com/) with no issues found.
 
@@ -305,8 +304,19 @@ The site was deployed to Heroku using the following steps:
 
 + [Martina Terlevic](https://github.com/SephTheOverwitch): My mentor who calmed me down in a state of panic and calmly described what was needed for the project. So that I had a plan going forward.
 + [Oscar Johansson](https://github.com/OskarJ1993): For being a rock throughout this course and being a support pillar.
-+ “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site. As well as using the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes, but is not limited to, some formatting for the way each blog post is displayed on the blog page and the comment model. Credits have been added as comments where code was used.
++ “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site. As well as using the instructions they provided in order to implement a django "blog" functionallity into my app. This also includes, but is not limited to, some formatting for the way each blog post is displayed on the blog page and the comment model. Credits have been added as comments where code was used.
 + "I think therefore I blog" + "Hello Django" + Slack + Stackoverflow + [Martina Terlevic](http://github.com/SephTheOverWitch): aided in the creation of the CRUD function centered on the comments.
 + Adam from Tutor support: assisting in deciphering why crispy caused an error.
 + Joanne from Tutor support: assisting in deploying to heroku and explaining the "etag" error.
 + [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu.
+  
+### Pexels images
+
+The images were obtained from Pexels. The following where used:
+
++ [Home page image](https://www.pexels.com/photo/closeup-photo-of-silver-iphone-7-plus-with-earpods-1038628/) - [PhotoMIX Company](https://www.pexels.com/@wdnet/)
++ [Iphone 13 image](https://www.pexels.com/photo/iphone-mockup-stationery-office-douglas-mendes-pexels-16228406/) - [Douglas Mendes](https://www.pexels.com/@doouglasma/)
++ [Huawei image](https://www.pexels.com/photo/black-huawei-android-smartphone-1036619/) - [Alex Fu](https://www.pexels.com/@alexfu/)
++ [Samsung s10 image](https://www.pexels.com/photo/black-samsung-android-smartphone-on-top-of-brown-wooden-tablke-214487/) - [John Tekeridis](https://www.pexels.com/@john-tekeridis-21837/)
++ [Iphone X image](https://www.pexels.com/photo/black-iphone-11-beside-airpods-and-coffee-cup-3250815/) - [Richard Balane](https://www.pexels.com/@richard-balane-808703/)
++ []() - []()

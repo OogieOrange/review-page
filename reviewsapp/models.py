@@ -45,7 +45,31 @@ class Comment(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         return f"Comment {self.body} created by {self.name}"
+
+
+class ContactReason(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ('name',)
+    
+    def __str__(self):
+        return self.name
+
+
+class BugReport(models.Model):
+    contact_reason = models.ForeignKey(
+        ContactReason, on_delete=models.PROTECT, blank=True, null=True)
+    name = models.CharField(max_length=100)
+    body = models.TextField(max_length=800)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return

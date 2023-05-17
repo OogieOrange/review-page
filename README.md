@@ -88,9 +88,9 @@ Yet to be implemented,
 
 ![Review details](static/)
 
-### Database Schema ?
-
 ### Colour Scheme
+
+For the colour scheme I wanted to give it a gentle pop of color as the design itself is simple. Thus I opted on lighter greens and pinks, and extending that to both the hero and placeholder image. The color combination were chosen as they complement eachoter, being from oposite sides of the color spectrum.
 
 ### Typography
 
@@ -209,9 +209,7 @@ The images were obtained from Pexels. The following where used:
 
 ### Validator Testing
 
-+ html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
-
-+ Errors listed only reference {%%} & {{}} tags.
++ [W3C validator](https://validator.w3.org/) 
 
 + CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
@@ -236,7 +234,7 @@ The images were obtained from Pexels. The following where used:
 + CSS3
 + Python
 + Django
-+ SQL - Postgres ?
++ SQL - Postgres 
 
 ### Frameworks, Libraries & Programs Used
 
@@ -245,7 +243,7 @@ The images were obtained from Pexels. The following where used:
 + Pexels - was used to provide the site with free photos.
 + Codeanywhere - was used for my IDE.
 + GitHub - was used to store my repository.
-+ Balsamiq - was used to create mockups of the project prior to starting.
++ ClipStudioPaint - was used to create the wireframe for the project.
 + Am I Responsive? - was used to ensure the project looked good across all devices and provide a visual representation of this.
 + Django
 + Bootstrap

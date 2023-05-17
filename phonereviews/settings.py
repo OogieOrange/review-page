@@ -32,8 +32,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-oogieorange-review-page-u5u48gh3v3.us2.codeanyapp.com', 'phone-review.herokuapp.com', 'localhost']
-
+    '8000-oogieorange-review-page-u5u48gh3v3.us2.codeanyapp.com',
+    'phone-review.herokuapp.com',
+    'localhost'
+]
 
 # Application definition
 

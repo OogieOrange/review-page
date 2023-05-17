@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 import uuid
 
-# Create your models here.
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -33,6 +32,8 @@ class Product(models.Model):
 
     def number_of_downvotes(self):
         return self.downvotes.count()
+
+# Comment class taken from "I think therefore I blog"
 
 
 class Comment(models.Model):

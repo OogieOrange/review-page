@@ -107,7 +107,7 @@ Yet to be implemented,
 
 + As a **Site User** I can **view the posted ratings** so that **I can get more information of the review accuracy**
 + As a **Site User** I can **take part in voting for the next product to be rated** so that **I can get insight on a product that I’m interested in**
-+ As a **Site User** I can **search for products on the site** so that **I can find items fast and easily*
++ As a **Site User** I can **search for products on the site** so that **I can find items fast and easily**
 
 ## Design
 

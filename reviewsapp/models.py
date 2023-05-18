@@ -56,7 +56,7 @@ class ContactReason(models.Model):
 
     class Meta:
         ordering = ('name',)
-    
+
     def __str__(self):
         return self.name
 
@@ -72,4 +72,4 @@ class BugReport(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return
+        return self.body

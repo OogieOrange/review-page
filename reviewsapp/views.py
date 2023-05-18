@@ -12,6 +12,8 @@ class ProductPosts(generic.ListView):
     context_object_name = 'product_posts'
     paginate_by = 12
 
+# ProductDetails taken from "I think therefore I blog" and modified
+
 
 class ProductDetails(generic.ListView):
 
@@ -81,3 +83,18 @@ def delete_comment(request, comment_id):
     comment.delete()
 
     return render(request, 'comment-deleted.html')
+
+
+def bug_reports(request):
+    if request.method == 'POST':
+        report_form = ReportForm(request.POST)
+        if report_form.is_valid():
+            report_form.instance.name = request.user.username
+            report_form.save()
+        return render(request, 'report-sent.html')
+    report_form = ReportForm()
+    context = {
+        'report_form': report_form
+    }
+
+    return render(request, 'report-page.html', context)

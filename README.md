@@ -2,35 +2,58 @@
 
 Phone reviews is a review page for phones of all different models. It is an open space to share your opinion of both the review and the product in question. Just register an account and login to share through the comments on the review of your choice.
 
-![Site view across devices]() !!!!!!!!!
-
 The live link can be found [HERE](https://phone-review.herokuapp.com/)
 
 ## Table of Contents
 
-+ [UX](#ux "UX")
-  + [Site Purpose and Goals](#site-purpose-and-goals "Site Purpose and Goals")
-  + [Audience](#audience "Audience")
-  + [Communication](#communication "Communication")
-+ [User Stories](#user-stories "User Stories")
-  + [Admin stories](#admin-stories "Admin stories")
-  + [Visitor stories](#visitor-stories "Visitor stories")
-+ [Design](#design "Design")
-  + [Colour Scheme](#colour-scheme "Colour Scheme")
-  + [Typography](#typography "Typography")
-  + [Imagery](#imagery "Imagery")
-+ [Features](#features "Features")
-  + [Existing Features](#existing-features "Existing Features")
-  + [C.R.U.D](#crud "C.R.U.D")
-+ [Testing](#testing "Testing")
-  + [Validator Testing](#validator-testing "Validator Testing")
-  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
-+ [Technologies Used](#technologies-used "Technologies Used")
-  + [Main Languages Used](#main-languages-used "Main Languages Used")
-  + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
-+ [Deployment](#deployment "Deployment")
-+ [Credits](#credits "Credits")
-  + [Content](#content "Content")
+- [Phone Review](#phone-review)
+  - [Table of Contents](#table-of-contents)
+  - [UX](#ux)
+    - [Site Purpose and Goals](#site-purpose-and-goals)
+    - [Audience](#audience)
+    - [Communication](#communication)
+    - [Future Goals](#future-goals)
+  - [User Stories](#user-stories)
+    - [Admin stories](#admin-stories)
+      - [As an admin](#as-an-admin)
+    - [Visitor stories](#visitor-stories)
+      - [As a visitor](#as-a-visitor)
+  - [Design](#design)
+    - [Wireframes](#wireframes)
+        - [Home Page](#home-page)
+        - [Review Details](#review-details)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+      - [Home Page](#home-page-1)
+        - [Mobile](#mobile)
+      - [Navigation Bar](#navigation-bar)
+        - [Desktop](#desktop)
+        - [Mobile](#mobile-1)
+      - [Review Details Page](#review-details-page)
+      - [Log in, Log out \& Sign up](#log-in-log-out--sign-up)
+        - [Login](#login)
+        - [Logout](#logout)
+        - [Sign-up](#sign-up)
+      - [Bug report](#bug-report)
+    - [C.R.U.D](#crud)
+      - [Create](#create)
+      - [Read](#read)
+      - [Update and Delete](#update-and-delete)
+    - [Features Left to Implement](#features-left-to-implement)
+  - [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+    - [Unfixed Bugs](#unfixed-bugs)
+  - [Technologies Used](#technologies-used)
+    - [Main Languages Used](#main-languages-used)
+    - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+    - [Installed Packages](#installed-packages)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Pexels images](#pexels-images)
 
 ## UX
 
@@ -47,6 +70,8 @@ The site is intended for everyone with either an interest in the phone market or
 The site is set up using a simple but clear layout and navigation to make it easy for both site user and asmin to find their way around.
 
 ### Future Goals
+
+For the site to be more interactive for the user. So that it can connect the comunity and engage them more in the coices made and the opinions shared on the site.
 
 ## User Stories
 
@@ -117,6 +142,10 @@ The images were obtained from Pexels. The following where used:
 
 ![Home page](static/readme-images/home-page.png)
 
+##### Mobile
+
+
+
 #### Navigation Bar
 
 ##### Desktop
@@ -145,6 +174,10 @@ The images were obtained from Pexels. The following where used:
 ![Logout](static/readme-images/logout.png)
 
 ##### Sign-up
+
+![Signup](static/readme-images/signup.png)
+
+#### Bug report
 
 ![Signup](static/readme-images/signup.png)
 

@@ -14,9 +14,9 @@
             </div>
             <div class="row">
                 <form method="POST" style="margin-top: 1.3em;">
-                    {{ report_form | crispy }}
+                    {{ report_form | crispy}}
                     {% csrf_token %}
-                    <button class="btn-light-blue" type="submit">Update</button>
+                    <button class="btn-light-blue" type="submit">Submit</button>
                 </form>
             </div>
         </div>

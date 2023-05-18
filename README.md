@@ -28,15 +28,22 @@ The live link can be found [HERE](https://phone-review.herokuapp.com/)
   - [Features](#features)
     - [Existing Features](#existing-features)
       - [Home Page](#home-page-1)
+        - [Desktop](#desktop)
         - [Mobile](#mobile)
       - [Navigation Bar](#navigation-bar)
-        - [Desktop](#desktop)
+        - [Desktop](#desktop-1)
         - [Mobile](#mobile-1)
       - [Review Details Page](#review-details-page)
+        - [Desktop](#desktop-2)
+        - [Mobile](#mobile-2)
       - [Log in, Log out \& Sign up](#log-in-log-out--sign-up)
         - [Login](#login)
+        - [Desktop](#desktop-3)
+        - [Mobile](#mobile-3)
         - [Logout](#logout)
         - [Sign-up](#sign-up)
+        - [Desktop](#desktop-4)
+        - [Mobile](#mobile-4)
       - [Bug report](#bug-report)
     - [C.R.U.D](#crud)
       - [Create](#create)
@@ -103,11 +110,9 @@ Yet to be implemented,
 
 ### Wireframes
 
-![Wireframe](static/)
-
 ##### Home Page
 
-![Home page](static/)
+![Home page](static/readme-images/)
 
 ##### Review Details
 
@@ -138,13 +143,17 @@ The images were obtained from Pexels. The following where used:
 
 ### Existing Features
 
+All existing features are responsive. For some of the following the mobile view has been added.
+
 #### Home Page
+
+##### Desktop
 
 ![Home page](static/readme-images/home-page.png)
 
 ##### Mobile
 
-
+![Home page mobile](static/readme-images/home-page-mobile.png)
 
 #### Navigation Bar
 
@@ -159,15 +168,27 @@ The images were obtained from Pexels. The following where used:
 
 #### Review Details Page
 
+##### Desktop
+
 ![Review details page top](static/readme-images/review-details-top.png)
 
 ![Review details page bottom](static/readme-images/review-details-bottom.png)
+
+##### Mobile
+
+![Review details page top mobile](static/readme-images/review-mobile.png)
 
 #### Log in, Log out & Sign up
 
 ##### Login
 
+##### Desktop
+
 ![Login](static/readme-images/login.png)
+
+##### Mobile
+
+![Login mobile](static/readme-images/login-mobile.png)
 
 ##### Logout
 
@@ -175,9 +196,17 @@ The images were obtained from Pexels. The following where used:
 
 ##### Sign-up
 
+##### Desktop
+
 ![Signup](static/readme-images/signup.png)
 
+##### Mobile
+
+![Signup mobile](static/readme-images/signup-mobile.png)
+
 #### Bug report
+
+![Bug report](static/readme-images/bug-report.png)
 
 ![Signup](static/readme-images/signup.png)
 
@@ -207,20 +236,29 @@ The images were obtained from Pexels. The following where used:
 
 ## Testing
 
-+ Static files not loading on heroku:
-
-- Deployment to heroku failed due to staic files failing to load (etag Error).
-+ Was solved by runing the command ```python3 manage.py collectstatic``` and adding the *X_FRAME_OPTIONS* key with *'SAMEORIGIN'* as value.
-
 + Django error message after adding comment form:
-
-- When adding the comment function crispy did not want to load.
-+ The problem was found to be that the wrong version of crispy was installed, and so it was uninstalled and the right version installed in it's place.
+    - When adding the comment function crispy did not want to load.
+    - The problem was found to be that the wrong version of crispy was installed, and so it was uninstalled and the right version installed in it's place.
 
 + Submit multiple comments:
+    - When adding the function to edit comments the comment model was edited to create a unique id for each one. But this did not work and resulted in an inability to comment (as the id for the comments were the same).
+    - This was solved by simply reverting back to the models default id method.
 
-- When adding the function to edit comments the comment model was edited to create a unique id for each one. But this did not work and resulted in an inability to comment (as the id for the comments were the same).
-+ This was solved by simply reverting back to the models default id method.
+- Static files not loading on heroku:
+    - Deployment to heroku failed due to staic files failing to load (etag Error).
+    - Was solved by runing the command ```python3 manage.py collectstatic``` and adding the *X_FRAME_OPTIONS* key with *'SAMEORIGIN'* as value.
+  
++ Two head elements loading:
+    - When validating the HTML code it came to ligth that two head elements were loading on the site. One of them the correct head and one a cropped vertion placed in the body element.
+    - The problem was found to be the diacritical mark " ` " somehow placed after a link in the head element in the base.html file, and was solved by removing it.
+
++ Url path not loading correctly:
+    - When adding the bug report page, the url for the review details page was interfering with the one for the bug report.
+    - The problem was the url for the bug report page being underneath the review details page url using ```<slug:slug>``` as the path. This was solved by moving the bug report page url to be over the review details page url. And was further prevented by changing the review details page url path to be ```review/<slug:slug>```, this being more unique.
+
++ Admin not being able to delete bug reports:
+    - When testing the admin side of the bug reports, it was found that trying to delete bug reports was throwing an error.
+    - The cause was a empty return for ```__str__``` that had been misseed. Filling in the return fixed the issue.
   
 
 | User story testing  | Does the functionality exist?  | If not why? |
@@ -242,13 +280,17 @@ The images were obtained from Pexels. The following where used:
 
 ### Validator Testing
 
-+ [W3C validator](https://validator.w3.org/) 
++ HTML files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
+  
+![W3C validator message](static/readme-images/html-validation.png)
 
 + CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
 ![Jigsaw validator message](static/readme-images/css-validation.png)
 
 + Lighthouse
+
+The "Best Practices" being low is according to lighthouse caused by connection to heroku and cloudinary. This was not changed as these two platforms are the once introduced to me during this course.
 
 ![Lighthouse Result](static/readme-images/lighthouse.png)
 
@@ -258,6 +300,8 @@ The images were obtained from Pexels. The following where used:
 + Tested the site opens in Chrome & Safari without issues.
 
 ### Unfixed Bugs
+
+No known unfixed bugs.
 
 ## Technologies Used
 
@@ -335,10 +379,12 @@ The site was deployed to Heroku using the following steps:
 
 + [Martina Terlevic](https://github.com/SephTheOverwitch): My mentor who calmed me down in a state of panic and calmly described what was needed for the project. So that I had a plan going forward.
 + [Oscar Johansson](https://github.com/OskarJ1993): For being a rock throughout this course and being a support pillar.
++ [Lauren-Nichole](https://github.com/CluelessBiker): For her eagle eyes helping me find the reason as to why my head element was being rendered twice.
 + “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site. As well as using the instructions they provided in order to implement a django "blog" functionallity into my app. This also includes, but is not limited to, some formatting for the way each blog post is displayed on the blog page and the comment model. Credits have been added as comments where code was used.
 + "I think therefore I blog" + "Hello Django" + Slack + Stackoverflow + [Martina Terlevic](http://github.com/SephTheOverWitch): aided in the creation of the CRUD function centered on the comments.
 + Adam from Tutor support: assisting in deciphering why crispy caused an error.
 + Joanne from Tutor support: assisting in deploying to heroku and explaining the "etag" error.
++ Ed from Tutor support: assisting in deciphering in why views interfered with oneanother through the urls.
 + [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu.
   
 ### Pexels images
@@ -350,4 +396,3 @@ The images were obtained from Pexels. The following where used:
 + [Huawei image](https://www.pexels.com/photo/black-huawei-android-smartphone-1036619/) - [Alex Fu](https://www.pexels.com/@alexfu/)
 + [Samsung s10 image](https://www.pexels.com/photo/black-samsung-android-smartphone-on-top-of-brown-wooden-tablke-214487/) - [John Tekeridis](https://www.pexels.com/@john-tekeridis-21837/)
 + [Iphone X image](https://www.pexels.com/photo/black-iphone-11-beside-airpods-and-coffee-cup-3250815/) - [Richard Balane](https://www.pexels.com/@richard-balane-808703/)
-+ []() - []()

@@ -29,7 +29,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-oogieorange-review-page-u5u48gh3v3.us2.codeanyapp.com',

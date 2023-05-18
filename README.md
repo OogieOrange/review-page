@@ -112,11 +112,21 @@ Yet to be implemented,
 
 ##### Home Page
 
-![Home page](static/readme-images/)
+![Home page](static/readme-images/wireframe-home-page.png)
 
 ##### Review Details
 
-![Review details](static/)
+Top of reviews page:
+
+Top of reviews page:
+
+Bottom of reviews page:
+
+![Review details page top](static/readme-images/wireframe-review-page-top.png)
+
+Bottom of reviews page:
+
+![Review details page bottom](static/readme-images/wireframe-review-page-bottom.png)
 
 ### Colour Scheme
 

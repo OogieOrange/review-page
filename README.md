@@ -66,19 +66,19 @@ The live link can be found [HERE](https://phone-review.herokuapp.com/)
 
 ### Site Purpose and Goals
 
-The sites purpose is to provide an open space to share your opinion of both the review and the product in question, for both the admin and the site user. And to give a insight in the products that are avalible on the market. So that site users can manke a purchase with more wellrounded information about the product.  
+The sites purpose is to provide an open space to share your opinion of both the review and the product in question, for both the admin and the site user. And to give a insight in the products that are avalible on the market. So that site users can make a purchase with more wellrounded information about the product.  
 
 ### Audience
 
-The site is intended for everyone with either an interest in the phone market or those in search for more information of a certain product before purchase. The expected audiance age range between 20-50 years of age
+The site is intended for everyone with either an interest in the phone market or those in search of more information of a certain product before purchase. The expected audiance age range between 20-50 years of age.
 
 ### Communication
 
-The site is set up using a simple but clear layout and navigation to make it easy for both site user and asmin to find their way around.
+The site is set up using a simple but clear layout and navigation to make it easy for both site user and admin to find their way around.
 
 ### Future Goals
 
-For the site to be more interactive for the user. So that it can connect the comunity and engage them more in the coices made and the opinions shared on the site.
+For the site to be more interactive for the user. So that it can connect the comunity and engage them more in the choices made and the opinions shared on the site.
 
 ## User Stories
 
@@ -91,6 +91,8 @@ Not all stories have been implemented. Some have been left for future implementa
 + I can **create draft versions of a review** so that **I can finish writing a review later without having to post it**
 + I can **add, edit and delete product ratings** so that **site users have access to the latest ratings and information**
 + I can **see comments on a review** so that **I can understand what others think of the product and review**
++ I can **see a list of reported bugs on the site** so that **I can fix found bugs**
+
 
 ### Visitor stories
 
@@ -99,6 +101,7 @@ Not all stories have been implemented. Some have been left for future implementa
 + I can **create an account on the site** so that **I can comment and take part of the community and the rating**
 + I can **leave, edit and delete comments on reviews** so that **I can provide personal insight on the product for others**
 + I can **see comments on a review** so that **I can understand what others think of the product and review**
++ I can **report bugs that I come across on the site** so that **a site admin can fix them**
 
 Yet to be implemented,
 
@@ -118,10 +121,6 @@ Yet to be implemented,
 
 Top of reviews page:
 
-Top of reviews page:
-
-Bottom of reviews page:
-
 ![Review details page top](static/readme-images/wireframe-review-page-top.png)
 
 Bottom of reviews page:
@@ -134,7 +133,9 @@ For the colour scheme I wanted to give it a gentle pop of color as the design it
 
 ### Typography
 
-The fonts were obtained from the Google Fonts library. I chose the following fonts for the page:
+The fonts were obtained from the Google Fonts library. They were chosen for beeing clean, simple and easy to read fonts, fitting the design. 
+
+I chose the following fonts for the page:
 
 + "PT Serif"
 + "Nunito Sans"
@@ -153,7 +154,7 @@ The images were obtained from Pexels. The following where used:
 
 ### Existing Features
 
-All existing features are responsive. For some of the following the mobile view has been added.
+All existing features are responsive. For some of the following the mobile view has been shown in addition to the desktop view.
 
 #### Home Page
 
@@ -251,16 +252,16 @@ All existing features are responsive. For some of the following the mobile view 
     - The problem was found to be that the wrong version of crispy was installed, and so it was uninstalled and the right version installed in it's place.
 
 + Submit multiple comments:
-    - When adding the function to edit comments the comment model was edited to create a unique id for each one. But this did not work and resulted in an inability to comment (as the id for the comments were the same).
+    - When adding the function to edit comments the comment model was edited to create a unique id for each one. But this did not work and resulted in an inability to comment multiple times (as the id for the comments were the same).
     - This was solved by simply reverting back to the models default id method.
 
 - Static files not loading on heroku:
     - Deployment to heroku failed due to staic files failing to load (etag Error).
-    - Was solved by runing the command ```python3 manage.py collectstatic``` and adding the *X_FRAME_OPTIONS* key with *'SAMEORIGIN'* as value.
+    - Was solved by runing the command ```python3 manage.py collectstatic```, adding the *X_FRAME_OPTIONS* key with *'SAMEORIGIN'* as value and setting *DEBUG* to *False*.
   
 + Two head elements loading:
-    - When validating the HTML code it came to ligth that two head elements were loading on the site. One of them the correct head and one a cropped vertion placed in the body element.
-    - The problem was found to be the diacritical mark " ` " somehow placed after a link in the head element in the base.html file, and was solved by removing it.
+    - When validating the HTML code it came to light that two head elements were loading on the site. One of them the correct head and one a cropped version placed in the body element.
+    - The problem was found to be the diacritical mark " ` " that was somehow placed after a link in the head element in the base.html file, and was solved by removing it.
 
 + Url path not loading correctly:
     - When adding the bug report page, the url for the review details page was interfering with the one for the bug report.
@@ -275,12 +276,14 @@ All existing features are responsive. For some of the following the mobile view 
 | ------------- | ------------- | ------------- |
 | As a **Site Admin** I can **create draft versions of a review** so that **I can finish writing a review later without having to post it**  | Yes  |  |
 | As a **Site Admin** I can **add, edit and delete product ratings** so that **site users have access to the latest ratings and information**  | Yes  |  |
+| As a **Site Admin** I can **see a list of reported bugs on the site** so that **I can fix found bugs**  | Yes  |  |
 | As a **Site User / Admin** I can **see comments on a review** so that **I can understand what others think of the product and review**  | Yes  |  |
 | As a **Site User** I can **create an account on the site** so that **I can comment and take part of the community and the rating**  | No  | The rating function is yet to be implemented. Otherwise the user story is complete |
 | As a **Site User** I can **leave, edit and delete comments on reviews** so that **I can provide personal insight on the product for others**  | Yes  |  |
 | As a **Site User** I can **search for products on the site** so that **I can find items fast and easily**  | No  | The function has yet to be implemented |
 | As a **Site User** I can **take part in voting for the next product to be rated** so that **I can get insight on a product that I'm interested in**  | No  | The function has yet to be implemented |
 | As a **Site User** I can **view the posted ratings** so that **I can get more information of the review accuracy**  | No  | The function has yet to be implemented |
+| As a **Site User** I can **report bugs that I come across on the site** so that **a site admin can fix them**  | Yes  |  |
 
 
 + Testing CRUD functionality:
@@ -307,7 +310,7 @@ The "Best Practices" being low is according to lighthouse caused by connection t
 + Python files passed through [PEP8](https://pep8ci.herokuapp.com/) with no issues found.
 
 
-+ Tested the site opens in Chrome & Safari without issues.
++ The site is tested and opens in Chrome & Safari without issues.
 
 ### Unfixed Bugs
 
@@ -331,7 +334,6 @@ No known unfixed bugs.
 + Codeanywhere - was used for my IDE.
 + GitHub - was used to store my repository.
 + ClipStudioPaint - was used to create the wireframe for the project.
-+ Am I Responsive? - was used to ensure the project looked good across all devices and provide a visual representation of this.
 + Django
 + Bootstrap
 
